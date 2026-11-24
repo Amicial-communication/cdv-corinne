@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Corinne Dannappe-Patinec – Amicial</title>
+<meta name="description" content="Carte de visite numérique de Corinne Dannappe-Patinec, Directrice Nouvelle-Aquitaine et Île-de-France, Amicial.">
+<meta name="theme-color" content="#3E5A7F">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Corinne">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&family=PT+Serif:wght@400&display=swap" rel="stylesheet">
+<style>
+  /* Couleurs de la charte Amicial 2024 */
+  :root {
+    --oregon: #3E5A7F;      /* bleu principal */
+    --oregon-dark: #2F4663;
+    --light-blue: #C7E0E4;
+    --tangerine: #F29559;
+    --bone: #E3DBC8;
+    --ink: #1F2F44;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { -webkit-text-size-adjust: 100%; background: var(--oregon); }
+  body {
+    font-family: "PT Serif", Georgia, serif;
+    background: var(--oregon);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+  .page { width: 100%; max-width: 460px; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 32px); }
+
+  /* Arche blanche : le logo est toujours posé sur fond blanc */
+  .top {
+    background: #fff;
+    padding: calc(env(safe-area-inset-top, 0px) + 28px) 24px 84px;
+    border-radius: 0 0 50% 50% / 0 0 56px 56px;
+    text-align: center;
+  }
+  .top img { width: min(62%, 240px); height: auto; display: inline-block; }
+
+  .identity { text-align: center; padding: 0 24px; margin-top: -64px; }
+  .photo {
+    width: 128px; height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    background: var(--light-blue);
+    display: block;
+    margin: 0 auto 16px;
+  }
+  h1 {
+    font-family: "Open Sans", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.65rem;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+  .role {
+    margin-top: 8px;
+    font-size: 1.05rem;
+    line-height: 1.45;
+    color: var(--light-blue);
+    text-wrap: balance;
+  }
+
+  .links { list-style: none; padding: 0 20px; margin-top: 28px; display: grid; gap: 12px; }
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    min-height: 60px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--oregon);
+    text-decoration: none;
+    font: inherit;
+    border: 2px solid #fff;
+    cursor: pointer;
+    text-align: left;
+  }
+  .link:active { transform: scale(.985); }
+  .link svg { flex: none; width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+  .link .t { display: block; font-family: "Open Sans", system-ui, sans-serif; font-weight: 700; font-size: 1.02rem; line-height: 1.25; }
+  .link .s { display: block; font-size: .9rem; line-height: 1.3; opacity: .85; overflow-wrap: anywhere; }
+  .primary { background: var(--tangerine); border-color: var(--tangerine); color: var(--ink); }
+  .ghost { background: transparent; color: #fff; }
+
+  .link:focus-visible, .tab:focus-visible, .close:focus-visible { outline: 3px solid var(--bone); outline-offset: 3px; }
+
+  dialog { border: 0; border-radius: 24px; padding: 24px; width: min(92vw, 380px); text-align: center; color: var(--ink); font-family: "PT Serif", Georgia, serif; }
+  dialog::backdrop { background: rgba(31, 47, 68, .8); }
+  .tabs { display: flex; gap: 6px; background: #EEF4F5; padding: 4px; border-radius: 999px; margin-bottom: 20px; }
+  .tab { flex: 1; font: inherit; font-family: "Open Sans", system-ui, sans-serif; font-weight: 600; font-size: .9rem; padding: 10px 8px; border: 0; border-radius: 999px; background: transparent; color: #5C6F82; cursor: pointer; }
+  .tab[aria-selected="true"] { background: var(--oregon); color: #fff; }
+  #qr { display: flex; justify-content: center; padding: 8px; background: #fff; }
+  #qr img, #qr canvas { max-width: 100%; height: auto; }
+  #qr-caption { margin: 14px 0 12px; font-size: .95rem; line-height: 1.4; }
+  .close { font-family: "Open Sans", system-ui, sans-serif; font-weight: 700; font-size: 1rem; background: none; border: 0; color: var(--oregon); padding: 10px 16px; cursor: pointer; }
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="top">
+    <img src="assets/logo.png" alt="Amicial – Votre partenaire autonomie à domicile" width="722" height="425">
+  </div>
+
+  <section class="identity">
+    <img class="photo" src="assets/corinne.jpg" alt="Portrait de Corinne Dannappe-Patinec" width="128" height="128">
+    <h1>Corinne Dannappe-Patinec</h1>
+    <p class="role">Directrice Nouvelle-Aquitaine et Île-de-France</p>
+  </section>
+
+  <ul class="links">
+    <li>
+      <a class="link primary" href="corinne-dannappe-patinec.vcf" download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 20a7 7 0 0 1 14 0M19 8v6M16 11h6"/></svg>
+        <span><span class="t">Ajouter à mes contacts</span></span>
+      </a>
+    </li>
+    <li>
+      <a class="link" href="tel:+33750554298">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        <span><span class="t">Appeler</span><span class="s">07 50 55 42 98</span></span>
+      </a>
+    </li>
+    <li>
+      <a class="link" href="mailto:corinne.patinec@amicial.fr">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <span><span class="t">Écrire un e-mail</span><span class="s">corinne.patinec@amicial.fr</span></span>
+      </a>
+    </li>
+    <li>
+      <a class="link" href="https://www.linkedin.com/in/corinne-dannappe-patinec-022625142" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.5v.01M12 16v-5.5M12 13c0-1.5 1-2.5 2.5-2.5S17 11.5 17 13v3"/></svg>
+        <span><span class="t">LinkedIn</span><span class="s">Voir mon profil</span></span>
+      </a>
+    </li>
+    <li>
+      <a class="link" href="https://www.amicial.fr" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z"/></svg>
+        <span><span class="t">Découvrir Amicial</span><span class="s">www.amicial.fr</span></span>
+      </a>
+    </li>
+    <li>
+      <button class="link ghost" type="button" id="open-qr">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2v2h-2zM18 14h2v2h-2zM14 18h2v2h-2zM18 18h2v2h-2z"/></svg>
+        <span><span class="t">Afficher mon QR code</span></span>
+      </button>
+    </li>
+  </ul>
+</main>
+
+<dialog id="qr-dialog" aria-label="QR code">
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-mode="contact">Fiche contact</button>
+    <button class="tab" role="tab" aria-selected="false" data-mode="page">Cette page</button>
+  </div>
+  <div id="qr"></div>
+  <p id="qr-caption"></p>
+  <button class="close" type="button" id="close-qr">Fermer</button>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  // Fiche contact compacte, sans accents pour un QR fiable sur tous les lecteurs
+  var VCARD = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "N:Dannappe-Patinec;Corinne;;;",
+    "FN:Corinne Dannappe-Patinec",
+    "ORG:Amicial",
+    "TITLE:Directrice Nouvelle-Aquitaine et Ile-de-France",
+    "TEL;TYPE=CELL:+33750554298",
+    "EMAIL:corinne.patinec@amicial.fr",
+    "URL:https://www.amicial.fr",
+    "END:VCARD"
+  ].join("\n");
+
+  var dialog = document.getElementById("qr-dialog");
+  var box = document.getElementById("qr");
+  var caption = document.getElementById("qr-caption");
+  var tabs = document.querySelectorAll(".tab");
+
+  function draw(mode) {
+    var text = mode === "contact" ? VCARD : location.href.split("#")[0];
+    caption.textContent = mode === "contact"
+      ? "Scannez avec l’appareil photo pour enregistrer le contact."
+      : "Scannez pour ouvrir cette carte de visite.";
+    box.innerHTML = "";
+    tabs.forEach(function (t) { t.setAttribute("aria-selected", String(t.dataset.mode === mode)); });
+    if (typeof QRCode === "undefined") {
+      box.textContent = "Le QR code n’a pas pu se charger. Vérifiez la connexion et réessayez.";
+      return;
+    }
+    var size = Math.min(280, window.innerWidth - 120);
+    new QRCode(box, { text: text, width: size, height: size, correctLevel: QRCode.CorrectLevel.M });
+  }
+
+  document.getElementById("open-qr").addEventListener("click", function () { draw("contact"); dialog.showModal(); });
+  document.getElementById("close-qr").addEventListener("click", function () { dialog.close(); });
+  dialog.addEventListener("click", function (e) { if (e.target === dialog) dialog.close(); });
+  tabs.forEach(function (t) { t.addEventListener("click", function () { draw(t.dataset.mode); }); });
+</script>
+</body>
+</html>
