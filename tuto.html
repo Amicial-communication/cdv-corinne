@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ajouter ma carte à l’écran d’accueil – Amicial</title>
+<meta name="theme-color" content="#3E5A7F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&family=PT+Serif:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root { --oregon:#3E5A7F; --light-blue:#C7E0E4; --tangerine:#F29559; --bone:#E3DBC8; --ink:#1F2F44; }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+  body { font-family: "PT Serif", Georgia, serif; color: var(--ink); background: #F4F8F9; line-height: 1.5; }
+  .wrap { max-width: 520px; margin: 0 auto; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 40px); }
+
+  header { background: var(--oregon); color: #fff; padding: calc(env(safe-area-inset-top, 0px) + 32px) 24px 40px; border-radius: 0 0 40px 40px; text-align: center; }
+  header img { width: 72px; height: 72px; border-radius: 18px; display: block; margin: 0 auto 16px; background: #fff; border: 3px solid #fff; }
+  h1 { font-family: "Open Sans", system-ui, sans-serif; font-weight: 700; font-size: 1.5rem; line-height: 1.25; text-wrap: balance; }
+  header p { margin-top: 10px; color: var(--light-blue); font-size: 1.02rem; text-wrap: balance; }
+
+  nav { display: flex; gap: 10px; padding: 20px 20px 0; }
+  nav a { flex: 1; text-align: center; text-decoration: none; font-family: "Open Sans", system-ui, sans-serif; font-weight: 700; padding: 14px 10px; border-radius: 999px; background: #fff; color: var(--oregon); border: 2px solid var(--oregon); }
+  nav a:focus-visible, .open:focus-visible { outline: 3px solid var(--tangerine); outline-offset: 3px; }
+
+  section { padding: 32px 20px 0; }
+  h2 { font-family: "Open Sans", system-ui, sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--oregon); margin-bottom: 4px; }
+  .lead { font-size: .95rem; color: #5C6F82; margin-bottom: 18px; }
+
+  .step { background: #fff; border-radius: 22px; padding: 18px; margin-bottom: 14px; box-shadow: 0 1px 0 rgba(62,90,127,.12); }
+  .head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .n { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--oregon); color: #fff; font-family: "Open Sans", system-ui, sans-serif; font-weight: 800; display: grid; place-items: center; }
+  .head h3 { font-family: "Open Sans", system-ui, sans-serif; font-weight: 700; font-size: 1.05rem; line-height: 1.3; }
+  .step p { font-size: .98rem; margin-top: 10px; }
+  .hint { color: #5C6F82; font-size: .9rem !important; }
+  svg { display: block; width: 100%; height: auto; border-radius: 14px; background: #E8EEF1; }
+
+  .open { display: block; text-align: center; text-decoration: none; margin-top: 12px; padding: 14px 18px; border-radius: 999px; background: var(--tangerine); color: var(--ink); font-family: "Open Sans", system-ui, sans-serif; font-weight: 700; }
+  .done { background: var(--light-blue); border-radius: 22px; padding: 18px; font-size: 1rem; }
+  .done strong { font-family: "Open Sans", system-ui, sans-serif; }
+
+  /* éléments des schémas */
+  .ui { fill: #F7F8FA; stroke: #D3D9E0; }
+  .pill { fill: #fff; }
+  .tx { font-family: "Open Sans", system-ui, sans-serif; font-size: 12px; fill: #2B3440; }
+  .tx-s { font-family: "Open Sans", system-ui, sans-serif; font-size: 10px; fill: #7A8794; }
+  .tx-b { font-family: "Open Sans", system-ui, sans-serif; font-size: 13px; font-weight: 700; fill: #2B3440; }
+  .tx-l { font-family: "Open Sans", system-ui, sans-serif; font-size: 12px; fill: #2F6FD0; }
+  .ic { fill: none; stroke: #2B3440; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .ic-b { fill: none; stroke: #2F6FD0; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .hl { fill: none; stroke: #F29559; stroke-width: 3.5; }
+  .hl-fill { fill: #FFF1E6; stroke: #F29559; stroke-width: 2.5; }
+  .sep { stroke: #E1E5EA; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="assets/icon-192.png" alt="">
+    <h1>Ajouter ma carte à l’écran d’accueil</h1>
+    <p>Un seul geste pour la retrouver et la montrer, comme une application.</p>
+  </header>
+
+  <nav aria-label="Choisir son téléphone">
+    <a href="#iphone">iPhone</a>
+    <a href="#android">Android</a>
+  </nav>
+
+  <!-- ===== iPHONE ===== -->
+  <section id="iphone">
+    <h2>Sur iPhone</h2>
+    <p class="lead">Avec Safari, le navigateur bleu en forme de boussole.</p>
+
+    <div class="step">
+      <div class="head"><span class="n">1</span><h3>Ouvrez la carte dans Safari</h3></div>
+      <p>Touchez le lien ci-dessous, ou tapez l’adresse de la carte dans Safari.</p>
+      <a class="open" href="index.html">Ouvrir la carte</a>
+    </div>
+
+    <div class="step">
+      <div class="head"><span class="n">2</span><h3>Touchez l’icône Partager</h3></div>
+      <svg viewBox="0 0 320 130" role="img" aria-label="Barre Safari avec l’icône Partager entourée">
+        <rect class="ui" x="10" y="14" width="300" height="102" rx="18"/>
+        <rect class="pill" x="22" y="24" width="276" height="26" rx="13"/>
+        <text class="tx-s" x="160" y="41" text-anchor="middle">ma-carte.github.io</text>
+        <path class="ic-b" d="M48 78 l-7 8 7 8"/>
+        <path class="ic-b" d="M104 78 l7 8 -7 8" opacity=".45"/>
+        <path class="ic-b" d="M156 82 h-3 a1 1 0 0 0-1 1 v13 a2 2 0 0 0 2 2 h12 a2 2 0 0 0 2-2 v-13 a1 1 0 0 0-1-1 h-3 M160 90 v-15 M155 80 l5-5 5 5"/>
+        <path class="ic-b" d="M212 80 q5-3 10 0 q5-3 10 0 v12 q-5-3-10 0 q-5-3-10 0z"/>
+        <rect class="ic-b" x="264" y="80" width="14" height="13" rx="2"/>
+        <circle class="hl" cx="160" cy="86" r="22"/>
+      </svg>
+      <p>C’est le carré avec une flèche qui sort vers le haut, en bas de l’écran.</p>
+      <p class="hint">Sur les iPhone récents, si vous ne le voyez pas, touchez d’abord les trois points « ⋯ », puis « Partager ».</p>
+    </div>
+
+    <div class="step">
+      <div class="head"><span class="n">3</span><h3>Choisissez « Sur l’écran d’accueil »</h3></div>
+      <svg viewBox="0 0 320 146" role="img" aria-label="Menu Partager avec la ligne « Sur l’écran d’accueil » entourée">
+        <rect class="ui" x="10" y="8" width="300" height="130" rx="16"/>
+        <text class="tx" x="26" y="31">Ajouter aux favoris</text>
+        <line class="sep" x1="26" y1="44" x2="294" y2="44"/>
+        <text class="tx" x="26" y="65">Rechercher dans la page</text>
+        <rect class="hl-fill" x="16" y="76" width="288" height="30" rx="10"/>
+        <text class="tx-b" x="26" y="96">Sur l’écran d’accueil</text>
+        <rect class="ic" x="272" y="82" width="18" height="18" rx="4"/>
+        <path class="ic" d="M281 86 v10 M276 91 h10"/>
+        <text class="tx" x="26" y="127">Imprimer</text>
+      </svg>
+      <p>Faites glisser la liste vers le haut jusqu’à trouver cette ligne.</p>
+    </div>
+
+    <div class="step">
+      <div class="head"><span class="n">4</span><h3>Touchez « Ajouter »</h3></div>
+      <svg viewBox="0 0 320 146" role="img" aria-label="Fenêtre de confirmation avec le bouton Ajouter entouré">
+        <defs><clipPath id="ci"><rect x="30" y="58" width="56" height="56" rx="13"/></clipPath></defs>
+        <rect class="ui" x="10" y="8" width="300" height="130" rx="16"/>
+        <text class="tx-l" x="26" y="34">Annuler</text>
+        <text class="tx-b" x="160" y="34" text-anchor="middle" font-size="12">Sur l’écran d’accueil</text>
+        <rect class="hl" x="246" y="17" width="58" height="26" rx="13"/>
+        <text class="tx-l" x="275" y="35" text-anchor="middle" font-weight="700">Ajouter</text>
+        <rect class="pill" x="20" y="50" width="280" height="76" rx="12"/>
+        <image href="assets/icon-192.png" x="30" y="58" width="56" height="56" clip-path="url(#ci)"/>
+        <text class="tx-b" x="100" y="82">Corinne</text>
+        <line class="sep" x1="100" y1="90" x2="290" y2="90"/>
+        <text class="tx-s" x="100" y="106">ma-carte.github.io</text>
+      </svg>
+      <p>L’icône apparaît sur l’écran d’accueil. Vous pouvez la déplacer comme n’importe quelle application.</p>
+    </div>
+  </section>
+
+  <!-- ===== ANDROID ===== -->
+  <section id="android">
+    <h2>Sur Android</h2>
+    <p class="lead">Avec Chrome, le navigateur rond rouge, jaune, vert et bleu.</p>
+
+    <div class="step">
+      <div class="head"><span class="n">1</span><h3>Ouvrez la carte dans Chrome</h3></div>
+      <p>Touchez le lien ci-dessous, ou tapez l’adresse de la carte dans Chrome.</p>
+      <a class="open" href="index.html">Ouvrir la carte</a>
+    </div>
+
+    <div class="step">
+      <div class="head"><span class="n">2</span><h3>Touchez les trois points</h3></div>
+      <svg viewBox="0 0 320 84" role="img" aria-label="Barre Chrome avec le menu trois points entouré">
+        <rect class="ui" x="10" y="12" width="300" height="60" rx="14"/>
+        <rect class="pill" x="22" y="24" width="232" height="36" rx="18"/>
+        <text class="tx-s" x="138" y="46" text-anchor="middle">ma-carte.github.io</text>
+        <circle cx="283" cy="31" r="2.8" fill="#2B3440"/><circle cx="283" cy="42" r="2.8" fill="#2B3440"/><circle cx="283" cy="53" r="2.8" fill="#2B3440"/>
+        <circle class="hl" cx="283" cy="42" r="20"/>
+      </svg>
+      <p>Ils sont en haut à droite de l’écran.</p>
+    </div>
+
+    <div class="step">
+      <div class="head"><span class="n">3</span><h3>Choisissez « Ajouter à l’écran d’accueil »</h3></div>
+      <svg viewBox="0 0 320 168" role="img" aria-label="Menu Chrome avec la ligne « Ajouter à l’écran d’accueil » entourée">
+        <rect class="ui" x="40" y="8" width="270" height="152" rx="14" fill="#fff"/>
+        <text class="tx" x="58" y="34">Nouvel onglet</text>
+        <rect class="hl-fill" x="48" y="46" width="254" height="34" rx="10"/>
+        <rect class="ic" x="58" y="54" width="14" height="18" rx="3"/>
+        <path class="ic" d="M65 59 v8 M61 63 h8"/>
+        <text class="tx-b" x="82" y="68">Ajouter à l’écran d’accueil</text>
+        <text class="tx" x="58" y="104">Partager…</text>
+        <text class="tx" x="58" y="130">Rechercher dans la page</text>
+      </svg>
+      <p class="hint">Selon la version de Chrome, la ligne peut s’appeler « Installer l’application ». C’est la même chose.</p>
+    </div>
+
+    <div class="step">
+      <div class="head"><span class="n">4</span><h3>Confirmez avec « Ajouter »</h3></div>
+      <svg viewBox="0 0 320 150" role="img" aria-label="Fenêtre de confirmation avec le bouton Ajouter entouré">
+        <defs><clipPath id="ca"><rect x="48" y="56" width="42" height="42" rx="10"/></clipPath></defs>
+        <rect class="ui" x="24" y="8" width="272" height="134" rx="20" fill="#fff"/>
+        <text class="tx-b" x="48" y="38">Ajouter à l’écran d’accueil</text>
+        <image href="assets/icon-192.png" x="48" y="56" width="42" height="42" clip-path="url(#ca)"/>
+        <text class="tx" x="102" y="82">Corinne</text>
+        <line x1="102" y1="90" x2="278" y2="90" stroke="#3E5A7F" stroke-width="1.5"/>
+        <text class="tx-l" x="160" y="127">Annuler</text>
+        <rect class="hl" x="232" y="108" width="52" height="26" rx="13"/>
+        <text class="tx-l" x="258" y="126" text-anchor="middle" font-weight="700">Ajouter</text>
+      </svg>
+      <p>Si Android propose de poser l’icône automatiquement, touchez « Ajouter ». L’icône apparaît sur l’écran d’accueil.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="done">
+      <strong>C’est fait.</strong> La carte s’ouvre maintenant en un geste, sans taper d’adresse. Pour la montrer à quelqu’un, touchez « Afficher mon QR code » : il le scanne avec l’appareil photo et enregistre le contact.
+    </div>
+  </section>
+</div>
+</body>
+</html>
